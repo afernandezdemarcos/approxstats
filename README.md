@@ -7,7 +7,7 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 ### $(n, alpha)$-stabilization
 
-In order to fit a $(n, \alpha)$-model to the ratios $T_{\infty; \alpha}/T_{\n; \alpha}$, use the script [fit_quantiles_nalpha.R](). Execute all steps, specfying the statistic you want to fit. 
+In order to fit a $(n, \alpha)$-model to the ratios $T_{\infty; \alpha}/T_{n; \alpha}$, use the script [fit_quantiles_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalpha.R). Execute all steps, specfying the statistic you want to fit. 
 
 **IMPORTANT!** Pre-computed Monte Carlo quantiles must be available at the folder */distributions/*.
 
@@ -17,7 +17,7 @@ avail_cir_tests
 statistic <- "KS"
 ```
 
-When fitting a model, you have several input options. Check [src/fit_T_Tn_stable_ratios.R]() to see a detailed description. However, if you want to reproduce the results from the paper, you might be interested in the following:
+When fitting a model, you have several input options. Check [src/fit_T_Tn_stable_ratios.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/fit_T_Tn_stable_ratios.R) to see a detailed description. However, if you want to reproduce the results from the paper, you might be interested in the following:
 
 ```R
 T_Tn_fitted <- fit_T_Tn(. . .,
@@ -27,9 +27,9 @@ T_Tn_fitted <- fit_T_Tn(. . .,
 ```
 
 - **fit.direction**: Specifies the optimal-search direction, can be "all", "both", or "forward".
-- **weights.fun**: Weight function that can be chosen from [src/weights.R](), numbered in the same order as in *Appendix A*.
-- **lambda**: Maximum power for $n$-like predictors, of the form (n^{-lambda/2}). Minimum required: 2. Check *Appendix B* for more detailed information.
-- **mu**: Maximum power for $\alpha$-like predictors, of the form (n^{-mu/2}). Minimum required: 2. Check *Appendix B* for more detailed information.
+- **weights.fun**: Weight function that can be chosen from [src/weights.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/weights.R), numbered in the same order as in *Appendix A*.
+- **lambda**: Maximum power for $n$-like predictors, of the form $n^{-\lambda/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
+- **mu**: Maximum power for $\alpha$-like predictors, of the form $n^{-\mu/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
 
 ### $(n, \alpha, p)$-stabilization
 
