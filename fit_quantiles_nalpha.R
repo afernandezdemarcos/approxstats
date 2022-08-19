@@ -1,7 +1,7 @@
 # Load src functions and packages
 
 source("src/get_quantile_ratios.R")# Quantile ratios
-source("src/fit_T_Tn_stable_ratios.R")# Fit model functions ########################## TODO: Ajustar automáticamente potencias de n, alpha
+source("src/fit_T_Tn_stable_ratios.R")# Fit model functions
 source("src/weights.R")# Weight functions
 source("src/drop_terms.R")# Further simplification from BIC-optimal model
 library(tidyselect)

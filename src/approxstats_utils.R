@@ -34,21 +34,39 @@ get_weights_from_function_n <- function(weights.fun, n_vector, alpha_vector,
                                         T_inf_vector, T_n_vector, f_Tn_vector,
                                         p_vector = NULL){
   if(!is.null(weights.fun)){
+    
     if(typeof(weights.fun) == "closure"){
+      
       weights <- if(is.null(p_vector)) {
-        weights.fun(n = n_vector, alpha = alpha_vector, 
-                    T_inf = T_inf_vector, T_n = T_n_vector, 
+        
+        weights.fun(n = n_vector, 
+                    alpha = alpha_vector, 
+                    T_inf = T_inf_vector, 
+                    T_n = T_n_vector, 
                     f_Tn = f_Tn_vector)
+        
+      }else{
+        
+        weights.fun(n = n_vector, 
+                    alpha = alpha_vector, 
+                    p_vector)
+        
+      }
+      
     }else{
-      weights.fun(n_vector, alpha_vector, p_vector)
-    }
-    }else{
+      
       stop("weights.fun must be a function of n")
+      
     }
+    
   }else{
+    
     weights <- weights.fun
+    
   }
+  
   return(weights)
+  
 }
 
 # Compute pdf from sample quantiles

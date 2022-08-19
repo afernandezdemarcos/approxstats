@@ -155,13 +155,20 @@ fit_T_Tn <- function(T_Tn, T_n, T_inf, f_T_n,
     if (!fit.p) {
       
       # (n, alpha)-model
-      get_weights_from_function_n(weights.fun, data$n, data$alpha, 
-                                  data$T_inf, data$T_n, data$f_T_n)
+      get_weights_from_function_n(weights.fun, 
+                                  n_vector = data$n, 
+                                  alpha_vector = data$alpha, 
+                                  T_inf_vector = data$T_inf, 
+                                  T_n_vector = data$T_n, 
+                                  f_Tn_vector = data$f_T_n)
       
     }else{
       
       # (n, alpha, p)-model
-      get_weights_from_function_n(weights.fun, data$n, data$alpha, data$p)
+      get_weights_from_function_n(weights.fun, 
+                                  n_vector = data$n, 
+                                  alpha_vector = data$alpha, 
+                                  p_vector = data$p)
       
     }
   )

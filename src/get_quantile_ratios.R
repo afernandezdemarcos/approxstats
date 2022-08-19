@@ -50,7 +50,10 @@ get_T_Tn <- function(quantiles, statistic, p, compute.asymp = TRUE,
     
   }else{
     
-    asymp.quantiles <- compute.asymp
+    asymp.quantiles <- matrix(rep(asymp.quantiles, N), byrow = TRUE, 
+                              nrow = N,
+                              dimnames = list(N.list, alpha[1:length(alpha)])
+                              )
     
   }
   
@@ -74,7 +77,7 @@ get_T_Tn <- function(quantiles, statistic, p, compute.asymp = TRUE,
     
     for (q in 1:length(alpha)){
       
-      T_Tn[,q] <- asymp.quantiles[q] / quantiles[,q]
+      T_Tn[,q] <- asymp.quantiles[,q] / quantiles[,q]
       
     }
     
