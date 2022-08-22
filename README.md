@@ -3,6 +3,13 @@
 ## Overview
 Software companion for the methodology proposed in *"Data-driven stabilizations of goodness-of-fit tests"* (Fernández-de-Marcos and García-Portugués, 2021).
 
+## Data
+
+Data can be found in []().
+
+It contains:
+- distributions.zip: Precomputed quantiles (1e7 Monte Carlo samples) and /asymptotic (hyperspherical n = 500 approximation of the asymptotic quantiles)
+
 ## Usage
 
 ### $(n, \alpha)$-stabilization
@@ -45,10 +52,39 @@ statistic <- "PCvM"
 
 It works similar to the $(n, \alpha)$-stabilization, except for the data preparation step, which is made directly in the main script. In addition, the **model.reference** is set to the specific form presented in (8).
 
-## Data application in astronomy
-The data application can be reproduced through the script []().
+## Uniformity tests
 
+In order to perform circular tests using the $(n, \alpha)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
+
+```R
+Theta <- 
+
+unif_test <- unif_test_mod(Theta = Theta, 
+                          statistic = "Kuiper")
+unif_test <- unif_test_mod(Theta = Theta, 
+                          statistic = "Watson")
+unif_test <- unif_test_mod(Theta = Theta, 
+                          statistic = "PAD")
+```
+
+### p-value approximation (Algorithm 1)
+
+## Data application in astronomy
+
+The data application can be reproduced through the following scripts. `rotasym` package contains sunspots data.
+
+**Uniformity test computation**
+- [sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/sunspots.R): Computes the (n, alpha)-stabilized p-value approximation, and saves the results and execution times.
+- [sunspots_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/sunspots.R): Computes the Monte Carlo (5e3 samples) p-value approximation, and saves its execution times.
+
+**Analysis**
+Once the uniformity tests are computed, the analysis can be performed in:
+- [analysis_sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/analysis_sunspots.R): It builds the whole analysis presented at Figure 4.
+- [exec_times_sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/exec_times_sunspots.R): Comparison of execution times between Monte Carlo and (n, alpha)-stabilization.
+
+The results are stored in `/sunspots/results`.
 
 
 ## References
+
 Fernández-de-Marcos, A., and García-Portugués, E. (2021). Data-driven stabilizations of goodness-of-fit tests. *arXiv:2112.01808*. https://arxiv.org/abs/2112.01808.
