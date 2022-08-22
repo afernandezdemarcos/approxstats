@@ -7,7 +7,7 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 Data can be found in [RunMyCode.org]().
 
-- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles in `/asymptotic`. This data is necessary to fit a $(n, \alpha, d)$-stabilization model.
+- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles in `/asymptotic`. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular statistics which are needed for the efficiency analysis.
 
 ## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
 
