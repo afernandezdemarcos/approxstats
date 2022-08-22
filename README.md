@@ -51,12 +51,13 @@ statistic <- "PCvM"
 
 It works similar to the $(n, \alpha)$-stabilization, except for the data preparation step, which is made directly in the main script. In addition, the **model.reference** is set to the specific form presented in (8).
 
-## Approximation assessment
+## Stabilization assessment
 
 In order to assess the performance of the fit compared to Monte Carlo and particular approximation methods for each statistic, both in terms of accuracy and efficiency, the following scripts are to be used.
 
 **Accuracy**
-- 
+- [nalphap_analysis/simulation](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/): 
+- [nalphap_analysis/charts](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/): 
 
 **Computation efficiency**
 - [exec_time/exec_time_comparison.R](https://github.com/afernandezdemarcos/approxstats/blob/main/exec_time/exec_time_comparison.R): Saves and analyzes execution times for Algorithm 1, Monte Carlo and particular approximation methods in `/results`.
