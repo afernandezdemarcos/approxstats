@@ -7,7 +7,7 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 Data can be found in [RunMyCode.org]().
 
-- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles in `/asymptotic`. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular statistics which are needed for the efficiency analysis.
+- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular and hyperspherical statistics which are needed for test computation.
 - `results.zip` contains the error and time execution results for the $(n, \alpha, d)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them, though execution times could be high depending on the resources.
 - `sunspots_results.zip` contains the sunspots births uniformity analysis. These results can also be replicated without need of downloading them.
 
@@ -82,18 +82,16 @@ In order to perform circular and hyperspherical tests using the $(n, \alpha, p)$
 n <- 10
 samp_cir <- r_unif_cir(n = n)
 
-V_n <- unif_test_mod(Theta = samp_cir, 
-                          statistic = "Kuiper")
-W2_n <- unif_test_mod(Theta = samp_cir, 
-                          statistic = "Watson")
+V_n <- unif_test_mod(Theta = samp_cir, statistic = "Kuiper")
+W2_n <- unif_test_mod(Theta = samp_cir, statistic = "Watson")
 
 samp_sph <- r_unif_sph(n = n, p = 3)
-PCvM_n <- unif_test_mod(Theta = samp_sph, 
-                          statistic = "PCvM")
-PAD_n <- unif_test_mod(Theta = samp_sph, 
-                          statistic = "PAD")
-Bakshaev_n <- unif_test_mod(Theta = samp_sph, 
-                          statistic = "Bakshaev")
+# For p = 2; 
+# samp_sph <- array(c(apply(samp_cir, 2, cos), apply(samp_cir, 2, sin)), 
+#                            dim = c(length(samp_cir), 2, 1))
+PCvM_n <- unif_test_mod(Theta = samp_sph, statistic = "PCvM")
+PAD_n <- unif_test_mod(Theta = samp_sph, statistic = "PAD")
+Bakshaev_n <- unif_test_mod(Theta = samp_sph, statistic = "Bakshaev")
 ```
 
 ## Data application in astronomy
