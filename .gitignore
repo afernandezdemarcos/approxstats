@@ -40,7 +40,6 @@ vignettes/*.pdf
 
 # package folders for saving data and doc
 imgs/
-results/
 
 # old library
 0ld/
