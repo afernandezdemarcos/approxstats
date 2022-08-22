@@ -3,7 +3,6 @@
 library(sphunif)
 library(Rcpp)
 source("src/unif_stat_distr.R")
-source("src/cir_stat_mod.R")
 
 unif_test_mod <- function(Theta, statistic, sorted = FALSE, method = "grid"){
 

@@ -7,7 +7,7 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 Data can be found in [RunMyCode.org]().
 
-- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, $N_{n; p} and /asymptotic (hyperspherical n = 500 approximation of the asymptotic quantiles).
+- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles in `/asymptotic`. This data is necessary to fit a $(n, \alpha, d)$-stabilization model.
 
 ## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
 
@@ -51,6 +51,16 @@ statistic <- "PCvM"
 
 It works similar to the $(n, \alpha)$-stabilization, except for the data preparation step, which is made directly in the main script. In addition, the **model.reference** is set to the specific form presented in (8).
 
+## Approximation assessment
+
+In order to assess the performance of the fit compared to Monte Carlo and particular approximation methods for each statistic, both in terms of accuracy and efficiency, the following scripts are to be used.
+
+**Accuracy**
+- 
+
+**Computation efficiency**
+- [exec_time/exec_time_comparison.R](https://github.com/afernandezdemarcos/approxstats/blob/main/exec_time/exec_time_comparison.R): Saves and analyzes execution times for Algorithm 1, Monte Carlo and particular approximation methods in `/results`.
+
 ## Uniformity tests
 
 In order to perform circular and hyperspherical tests using the $(n, \alpha, p)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
@@ -65,9 +75,9 @@ W2_n <- unif_test_mod(Theta = samp_cir,
                           statistic = "Watson")
 
 samp_sph <- r_unif_sph(n = n, p = 3)
-PAD_n <- unif_test_mod(Theta = samp_sph, 
-                          statistic = "PCvM")
 PCvM_n <- unif_test_mod(Theta = samp_sph, 
+                          statistic = "PCvM")
+PAD_n <- unif_test_mod(Theta = samp_sph, 
                           statistic = "PAD")
 Bakshaev_n <- unif_test_mod(Theta = samp_sph, 
                           statistic = "Bakshaev")
