@@ -49,4 +49,6 @@ results/
 
 .Rproj.user
 
-./applications/results
+./sunspots/results
+
+*.zip

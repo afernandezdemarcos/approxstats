@@ -5,12 +5,11 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 ## Data
 
-Data can be found in []().
+Data can be found in [RunMyCode.org]().
 
-It contains:
-- distributions.zip: Precomputed quantiles (1e7 Monte Carlo samples) and /asymptotic (hyperspherical n = 500 approximation of the asymptotic quantiles)
+- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, $N_{n; p} and /asymptotic (hyperspherical n = 500 approximation of the asymptotic quantiles).
 
-## Fit a (n, \alpha, d)-stabilization model for a statistic $T_n$
+## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
 
 ### $(n, \alpha)$-stabilization
 
@@ -68,9 +67,9 @@ W2_n <- unif_test_mod(Theta = samp_cir,
 samp_sph <- r_unif_sph(n = n, p = 3)
 PAD_n <- unif_test_mod(Theta = samp_sph, 
                           statistic = "PCvM")
-PAD_n <- unif_test_mod(Theta = samp_sph, 
+PCvM_n <- unif_test_mod(Theta = samp_sph, 
                           statistic = "PAD")
-PAD_n <- unif_test_mod(Theta = samp_sph, 
+Bakshaev_n <- unif_test_mod(Theta = samp_sph, 
                           statistic = "Bakshaev")
 ```
 
