@@ -43,7 +43,7 @@ data <- data.frame(n=integer(),
 for (p in p.list){
   
   # Load asymptotic distributions previously stored
-  load(paste0("distributions/n500_asymp_qua_", statistic, ".RData"))
+  load(paste0("distributions/asymptotic/n500_asymp_qua_", statistic, ".RData"))
   asymp.quantiles <- quantiles[(as.numeric(rownames(quantiles) >= q.start)) 
                                & (as.numeric(rownames(quantiles) <= q.end)), 
                                as.character(p)]
