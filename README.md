@@ -7,9 +7,9 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 Data can be found in [RunMyCode.org]().
 
-- `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular and hyperspherical statistics which are needed for test computation.
-- `results.zip` contains the error and time execution results for the $(n, \alpha, d)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them, though execution times could be high depending on the resources.
-- `sunspots_results.zip` contains the sunspots births uniformity analysis. These results can also be replicated without need of downloading them.
+- `distributions` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular and hyperspherical statistics which are needed for test computation.
+- `results` contains the error and time execution results for the $(n, \alpha, d)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them, though execution times could be high depending on the resources.
+- `sunspots_results` contains the sunspots births uniformity analysis. These results can also be replicated without need of downloading them.
 
 ## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
 

@@ -40,7 +40,6 @@ vignettes/*.pdf
 .Renviron
 
 # package folders for saving data and doc
-distributions/
 imgs/
 results/
 
