@@ -10,7 +10,7 @@ Data can be found in []().
 It contains:
 - distributions.zip: Precomputed quantiles (1e7 Monte Carlo samples) and /asymptotic (hyperspherical n = 500 approximation of the asymptotic quantiles)
 
-## Usage
+## Fit a (n, \alpha, d)-stabilization model for a statistic $T_n$
 
 ### $(n, \alpha)$-stabilization
 
@@ -54,20 +54,25 @@ It works similar to the $(n, \alpha)$-stabilization, except for the data prepara
 
 ## Uniformity tests
 
-In order to perform circular tests using the $(n, \alpha)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
+In order to perform circular and hyperspherical tests using the $(n, \alpha, p)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
 
 ```R
-Theta <- 
+n <- 10
+samp_cir <- r_unif_cir(n = n)
 
-unif_test <- unif_test_mod(Theta = Theta, 
+V_n <- unif_test_mod(Theta = samp_cir, 
                           statistic = "Kuiper")
-unif_test <- unif_test_mod(Theta = Theta, 
+W2_n <- unif_test_mod(Theta = samp_cir, 
                           statistic = "Watson")
-unif_test <- unif_test_mod(Theta = Theta, 
-                          statistic = "PAD")
-```
 
-### p-value approximation (Algorithm 1)
+samp_sph <- r_unif_sph(n = n, p = 3)
+PAD_n <- unif_test_mod(Theta = samp_sph, 
+                          statistic = "PCvM")
+PAD_n <- unif_test_mod(Theta = samp_sph, 
+                          statistic = "PAD")
+PAD_n <- unif_test_mod(Theta = samp_sph, 
+                          statistic = "Bakshaev")
+```
 
 ## Data application in astronomy
 
@@ -75,12 +80,13 @@ The data application can be reproduced through the following scripts. `rotasym` 
 
 **Uniformity test computation**
 - [sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/sunspots.R): Computes the (n, alpha)-stabilized p-value approximation, and saves the results and execution times.
-- [sunspots_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/sunspots.R): Computes the Monte Carlo (5e3 samples) p-value approximation, and saves its execution times.
+- [sunspots_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/sunspots_MC.R): Computes the Monte Carlo (5e3 samples) p-value approximation, and saves its execution times.
 
 **Analysis**
+
 Once the uniformity tests are computed, the analysis can be performed in:
 - [analysis_sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/analysis_sunspots.R): It builds the whole analysis presented at Figure 4.
-- [exec_times_sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/exec_times_sunspots.R): Comparison of execution times between Monte Carlo and (n, alpha)-stabilization.
+- [exec_time_sunspots.R](https://github.com/afernandezdemarcos/approxstats/blob/main/sunspots/exec_time_sunspots.R): Comparison of execution times between Monte Carlo and (n, alpha)-stabilization.
 
 The results are stored in `/sunspots/results`.
 
