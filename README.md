@@ -1,4 +1,4 @@
-# approxstats
+# Data-driven stabilizations of gof tests (approxstats)
 
 ## Overview
 Software companion for the methodology proposed in *"Data-driven stabilizations of goodness-of-fit tests"* (Fernández-de-Marcos and García-Portugués, 2021).
