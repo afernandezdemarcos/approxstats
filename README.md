@@ -34,7 +34,7 @@ T_Tn_fitted <- fit_T_Tn(. . .,
                         lambda = 2, mu = 2)
 ```
 
-- **fit.direction**: Specifies the optimal-search direction, can be "all", "both", or "forward".
+- **fit.direction**: Specifies the optimal-search direction, can be `"all"`, `"both"`, or `"forward"`.
 - **weights.fun**: Weight function that can be chosen from [src/weights.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/weights.R), numbered in the same order as in *Appendix A*.
 - **lambda**: Maximum power for $n$-like predictors, of the form $n^{-\lambda/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
 - **mu**: Maximum power for $\alpha$-like predictors, of the form $\alpha^{-\mu/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
@@ -58,18 +58,18 @@ It works similar to the $(n, \alpha)$-stabilization, except for the data prepara
 In order to assess the performance of the fit compared to Monte Carlo and particular approximation methods for each statistic, both in terms of accuracy and efficiency, the following scripts are to be used.
 
 **Accuracy**
-- `nalphap_analysis/simulation/`: Scripts for empirical approximation Monte Carlo simulation. Results are saved in `results`.
-    - [n_alpha_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic $(n, alpha)$-approximation.
+- `nalphap_analysis/simulation/`: Scripts for Monte Carlo simulation of empirical approximations using different methods. Results are saved in `results`.
+    - [nalphaours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic $(n, \alpha)$-approximation.
     - [nalpha_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
     - [nalpha_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/n_alpha_ours.R): Computes Monte Carlo samples of the statistic particular approximation.
-    - [nalphap_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_ours.R): Computes Monte Carlo samples of the statistic $(n, alpha, p)$-approximation.
+    - [nalphap_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_ours.R): Computes Monte Carlo samples of the statistic $(n, \alpha, p)$-approximation.
     - [nalphap_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
     - [process_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalpha.R) and [process_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalphap.R): Compute empirical rejection proportion from the samples simulated with the previous scripts, along with Monte Carlo confidence intervals.
 
 - `nalphap_analysis/charts/`: Scripts for error analysis.
-    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ($V_n$, and $U^2_n$)
-    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, \alpha, p)$-stabilization. ($D_n$, $W^2_n$, and $A^2_n$)
-    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ($P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$)
+    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ( $V_n$, and $U^2_n$)
+    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, \alpha, p)$-stabilization. ( $D_n$, $W^2_n$, and $A^2_n$)
+    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ( $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$)
 
 **Computation efficiency**
 - [exec_time/exec_time_comparison.R](https://github.com/afernandezdemarcos/approxstats/blob/main/exec_time/exec_time_comparison.R): Saves and analyzes execution times for Algorithm 1, Monte Carlo and particular approximation methods in `/results`.
