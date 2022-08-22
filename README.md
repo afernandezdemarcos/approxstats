@@ -59,9 +59,9 @@ In order to assess the performance of the fit compared to Monte Carlo and partic
 
 **Accuracy**
 - `nalphap_analysis/simulation/`: Scripts for Monte Carlo simulation of empirical approximations using different methods. Results are saved in `results`.
-    - [nalphaours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic $(n, \alpha)$-approximation.
+    - [nalpha_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_ours.R): Computes Monte Carlo samples of the statistic $(n, \alpha)$-approximation.
     - [nalpha_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
-    - [nalpha_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/n_alpha_ours.R): Computes Monte Carlo samples of the statistic particular approximation.
+    - [nalpha_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_particular.R): Computes Monte Carlo samples of the statistic particular approximation.
     - [nalphap_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_ours.R): Computes Monte Carlo samples of the statistic $(n, \alpha, p)$-approximation.
     - [nalphap_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
     - [process_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalpha.R) and [process_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalphap.R): Compute empirical rejection proportion from the samples simulated with the previous scripts, along with Monte Carlo confidence intervals.
