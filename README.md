@@ -8,6 +8,8 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 Data can be found in [RunMyCode.org]().
 
 - `distributions.zip` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles in `/asymptotic`. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular statistics which are needed for the efficiency analysis.
+- `results.zip` contains the error and time execution results for the $(n, \alpha, d)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them.
+- `sunspots_results.zip` contains the sunspots births uniformity analysis. These results can also be replicated without need of downloading them.
 
 ## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
 
@@ -56,8 +58,12 @@ It works similar to the $(n, \alpha)$-stabilization, except for the data prepara
 In order to assess the performance of the fit compared to Monte Carlo and particular approximation methods for each statistic, both in terms of accuracy and efficiency, the following scripts are to be used.
 
 **Accuracy**
-- [nalphap_analysis/simulation](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/): 
-- [nalphap_analysis/charts](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/): 
+- `nalphap_analysis/simulation`: Scripts for empirical approximation Monte Carlo simulation. Results are saved in `results`.
+    - [](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/.R): 
+- `nalphap_analysis/charts`: Scripts for error analysis.
+    - [nalphap_analysis/charts/nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ($V_n$, and $U^2_n$)
+    - [nalphap_analysis/charts/nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, \alpha, p)$-stabilization. ($D_n$, $W^2_n$, and $A^2_n$)
+    - [nalphap_analysis/charts/nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ($P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$)
 
 **Computation efficiency**
 - [exec_time/exec_time_comparison.R](https://github.com/afernandezdemarcos/approxstats/blob/main/exec_time/exec_time_comparison.R): Saves and analyzes execution times for Algorithm 1, Monte Carlo and particular approximation methods in `/results`.
