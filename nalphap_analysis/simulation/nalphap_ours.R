@@ -21,7 +21,7 @@ for (statistic in c("PCvM", "Bakshaev", "PAD")){
     }
     
     # Asymptotic critical values
-    load(paste0("distributions/asymptotic/n500_asymp_qua_", statistic, ".RData"))
+    load(paste0("distributions/n500_asymp_qua_", statistic, ".RData"))
     asymp.quantiles <- quantiles
     
     mod.results <- array(dim = c(M, length(n.list), length(alpha.list), length(p.list)),
