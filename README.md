@@ -7,11 +7,11 @@ Software companion for the methodology proposed in *"Data-driven stabilizations 
 
 Data can be found in the following directories.
 
-- `/distributions` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles. This data is necessary to fit a $(n, \alpha, d)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular and hyperspherical statistics which are needed for test computation.
-- `/results` contains the error and time execution results for the $(n, \alpha, d)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them, though execution times could be high depending on the resources.
+- `/distributions` contains precomputed quantiles (1e7 Monte Carlo samples) for statistics $D_n$, $W^2_n$, $A^2_n$, $P^{AD}\_{n, p}$, $P^{CvM}\_{n, p}$, and $N_{n, p}$; and hyperspherical $n=500$ approximation of the asymptotic quantiles. This data is necessary to fit a $(n, d, \alpha)$-stabilization model. In addition, `/asymptotic` contains asymptotic quantiles for circular and hyperspherical statistics which are needed for test computation.
+- `/results` contains the error and time execution results for the $(n, d, \alpha)$-stabilizations proposed in the paper. These results can be replicated without need of downloading them, though execution times could be high depending on the resources.
 - `/sunspots/results` contains the sunspots births uniformity analysis. These results can also be replicated without need of downloading them.
 
-## Fit a $(n, \alpha, d)$-stabilization model for a statistic $T_n$
+## Fit a $(n, d, \alpha)$-stabilization model for a statistic $T_n$
 
 ### $(n, \alpha)$-stabilization
 
@@ -39,9 +39,9 @@ T_Tn_fitted <- fit_T_Tn(. . .,
 - **lambda**: Maximum power for $n$-like predictors, of the form $n^{-\lambda/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
 - **mu**: Maximum power for $\alpha$-like predictors, of the form $\alpha^{-\mu/2}$. Minimum required: 2. Check *Appendix B* for more detailed information.
 
-### $(n, \alpha, p)$-stabilization
+### $(n, p, \alpha)$-stabilization
 
-In order to fit a $(n, \alpha, p)$-model to the ratios $T_{\infty; \alpha; p}/T_{n; \alpha; p}$, use the script [fit_quantiles_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalphap.R). Execute all steps, specfying the statistic you want to fit. 
+In order to fit a $(n, p, \alpha)$-model to the ratios $T_{\infty, p; \alpha}/T_{n, p; \alpha}$, use the script [fit_quantiles_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalphap.R). Execute all steps, specfying the statistic you want to fit. 
 
 **IMPORTANT!** Asymptotic quantiles are approximated by $n=500$ quantiles, which must be available at the folder */distributions/asymptotic/*.
 
@@ -62,21 +62,21 @@ In order to assess the performance of the fit compared to Monte Carlo and partic
     - [nalpha_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_ours.R): Computes Monte Carlo samples of the statistic $(n, \alpha)$-approximation.
     - [nalpha_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
     - [nalpha_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalpha_particular.R): Computes Monte Carlo samples of the statistic particular approximation.
-    - [nalphap_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_ours.R): Computes Monte Carlo samples of the statistic $(n, \alpha, p)$-approximation.
+    - [nalphap_ours.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_ours.R): Computes Monte Carlo samples of the statistic $(n, p, \alpha)$-approximation.
     - [nalphap_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/nalphap_MC.R): Computes Monte Carlo samples of the statistic Monte Carlo approximation.
     - [process_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalpha.R) and [process_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalphap.R): Compute empirical rejection proportion from the samples simulated with the previous scripts, along with Monte Carlo confidence intervals.
 
 - `nalphap_analysis/charts/`: Scripts for error analysis.
-    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ( $V_n$, and $U^2_n$)
-    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, \alpha, p)$-stabilization. ( $D_n$, $W^2_n$, and $A^2_n$)
-    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ( $P^{AD}\_{n; p}$, $P^{CvM}\_{n; p}$, and $N_{n; p}$)
+    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, p, \alpha)$-stabilization. ( $V_n$, and $U^2_n$)
+    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, p, \alpha)$-stabilization. ( $D_n$, $W^2_n$, and $A^2_n$)
+    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, \alpha, p)$-stabilization. ( $P^{AD}\_{n, p}$, $P^{CvM}\_{n, p}$, and $N_{n, p}$)
 
 **Computation efficiency**
 - [exec_time/exec_time_comparison.R](https://github.com/afernandezdemarcos/approxstats/blob/main/exec_time/exec_time_comparison.R): Saves and analyzes execution times for Algorithm 1, Monte Carlo and particular approximation methods in `/results`.
 
 ## Uniformity tests
 
-In order to perform circular and hyperspherical tests using the $(n, \alpha, p)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
+In order to perform circular and hyperspherical tests using the $(n, p, \alpha)$ stabilization and Algorithm 1 p-value approximation, use `unif_test_mod` from [src/unif_test.R](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
 
 ```R
 n <- 10
