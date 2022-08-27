@@ -15,7 +15,7 @@ Data can be found in the following directories:
 
 ### $(n, \alpha)$-stabilization
 
-In order to fit a $(n, \alpha)$-model to the ratios $T_{\infty; \alpha}/T_{n; \alpha}$, use the script [`fit_quantiles_nalpha.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalpha.R). Execute all steps, specfying the statistic you want to fit.
+In order to fit a $(n, \alpha)$-model to the ratios $T_{\infty; \alpha}/T_{n; \alpha}$, use the script [`fit_quantiles_nalpha.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalpha.R). Execute all steps, specifying the statistic you want to fit.
 
 **IMPORTANT!** Pre-computed Monte Carlo quantiles must be available at the folder `/distributions`.
 
@@ -41,7 +41,7 @@ T_Tn_fitted <- fit_T_Tn(...,
 
 ### $(n, p, \alpha)$-stabilization
 
-In order to fit a $(n, p, \alpha)$-model to the ratios $T_{\infty, p; \alpha}/T_{n, p; \alpha}$, use the script [`fit_quantiles_nalphap.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalphap.R). Execute all steps, specfying the statistic you want to fit. 
+In order to fit a $(n, p, \alpha)$-model to the ratios $T_{\infty, p; \alpha}/T_{n, p; \alpha}$, use the script [`fit_quantiles_nalphap.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalphap.R). Execute all steps, specifying the statistic you want to fit. 
 
 **IMPORTANT!** Asymptotic quantiles are approximated by $n=500$ quantiles, which must be available at the folder `/distributions/asymptotic`.
 
