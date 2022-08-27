@@ -15,7 +15,7 @@ Data can be found in the following directories.
 
 ### $(n, \alpha)$-stabilization
 
-In order to fit a $(n, \alpha)$-model to the ratios $T\_{\infty; \alpha}/T\_{n; \alpha}$, use the script [fit_quantiles_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalpha.R). Execute all steps, specfying the statistic you want to fit. 
+In order to fit a $(n, \alpha)$-model to the ratios $T_{\infty; \alpha}/T_{n; \alpha}$, use the script [fit_quantiles_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/fit_quantiles_nalpha.R). Execute all steps, specfying the statistic you want to fit. 
 
 **IMPORTANT!** Pre-computed Monte Carlo quantiles must be available at the folder `/distributions/`.
 
@@ -68,9 +68,9 @@ In order to assess the performance of the fit compared to Monte Carlo and partic
     - [process_nalpha.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalpha.R) and [process_nalphap.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/simulation/process_nalphap.R): Compute empirical rejection proportion from the samples simulated with the previous scripts, along with Monte Carlo confidence intervals.
 
 - `nalphap_analysis/charts/`: Scripts for error analysis.
-    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, p, \alpha)$-stabilization. ( $V_n$ and $U^2_n$)
-    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, p, \alpha)$-stabilization. ( $D_n$, $W^2_n$, and $A^2_n$)
-    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, p, \alpha)$-stabilization. ( $P^{\mathrm{AD}}\_{n, p}$, $P^{\mathrm{CvM}}\_{n, p}$, and $N_{n, p}$)
+    - [nalpha_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation and $(n, p, \alpha)$-stabilization. ($V_n$ and $U^2_n$)
+    - [nalpha_error_ours_MC_particular.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalpha_error_ours_MC_particular.R): Builds Figure 2, comparing approximation errors between Monte Carlo approximation, particular methods and $(n, p, \alpha)$-stabilization. ($D_n$, $W^2_n$, and $A^2_n$)
+    - [nalphap_error_ours_MC.R](https://github.com/afernandezdemarcos/approxstats/blob/main/nalphap_analysis/charts/nalphap_error_ours_MC.R): Builds Figure 3, comparing approximation errors between Monte Carlo approximation and $(n, p, \alpha)$-stabilization. ($P^{\mathrm{AD}}_{n, p}$, $P^{\mathrm{CvM}}_{n, p}$, and $N_{n, p}$)
 
 ### Computation efficiency
 
