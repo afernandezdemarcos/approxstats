@@ -77,7 +77,7 @@ In order to assess the performance of the fit compared to Monte Carlo and partic
 
 ## Uniformity tests
 
-In order to perform circular and hyperspherical tests using the $(n, p, \alpha)$ stabilization and Algorithm 1 $p$-value approximation, use `unif_test_mod` from [`/src/unif_test.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
+In order to perform circular and hyperspherical tests using the $(n, p, \alpha)$ stabilization and Algorithm 1 $p$-value approximation, use `unif_test_mod()` from [`/src/unif_test.R`](https://github.com/afernandezdemarcos/approxstats/blob/main/src/unif_test.R).
 
 ```r
 n <- 10
